@@ -36,5 +36,5 @@ RUN sudo useradd -m openwrt \
 RUN sudo -iu openwrt git clone git://git.openwrt.org/15.05/openwrt.git
 
 # download and install all available "feeds"
-RUN sudo -iu openwrt ~/openwrt/scripts/feeds update -a \
-    && ~/openwrt/scripts/feeds install -a
+RUN sudo -iu openwrt /home/openwrt/openwrt/scripts/feeds update -a \
+    && /home/openwrt/openwrt/scripts/feeds install -a

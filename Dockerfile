@@ -29,12 +29,12 @@ RUN sudo apt-get update \
     && apt-get clean 
     
 # download openwrt sources with git from git://git.openwrt.org/openwrt.git
-RUN git clone git://git.openwrt.org/15.05/openwrt.git
+RUN sudo git clone git://git.openwrt.org/15.05/openwrt.git
 
 # download and install all available "feeds"
-RUN ./openwrt/scripts/feeds update -a \
+RUN sudo ./openwrt/scripts/feeds update -a \
     && ./openwrt/scripts/feeds install -a
 
 # first make openwrt
-RUN cd ./openwrt/ \
+RUN sudo cd ./openwrt/ \
     && make

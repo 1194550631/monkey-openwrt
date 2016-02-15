@@ -28,13 +28,13 @@ RUN sudo apt-get update \
     && apt-get install -y wget \
     && apt-get clean 
     
-# add openwrt user 
-RUN sudo useradd -m openwrt \
-    && echo 'openwrt ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
-
 # download openwrt sources with git from git://git.openwrt.org/openwrt.git
-RUN sudo -iu openwrt git clone git://git.openwrt.org/15.05/openwrt.git
+RUN git clone git://git.openwrt.org/15.05/openwrt.git
 
 # download and install all available "feeds"
-RUN sudo -iu openwrt /home/openwrt/openwrt/scripts/feeds update -a \
-    && /home/openwrt/openwrt/scripts/feeds install -a
+RUN /root/openwrt/scripts/feeds update -a \
+    && /root/openwrt/scripts/feeds install -a
+
+# first make openwrt
+RUN cd /root/openwrt/ \
+    && make

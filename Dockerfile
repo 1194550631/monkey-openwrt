@@ -32,9 +32,9 @@ RUN sudo apt-get update \
 RUN git clone git://git.openwrt.org/15.05/openwrt.git
 
 # download and install all available "feeds"
-RUN /root/openwrt/scripts/feeds update -a \
-    && /root/openwrt/scripts/feeds install -a
+RUN ./openwrt/scripts/feeds update -a \
+    && ./openwrt/scripts/feeds install -a
 
 # first make openwrt
-RUN cd /root/openwrt/ \
+RUN cd ./openwrt/ \
     && make

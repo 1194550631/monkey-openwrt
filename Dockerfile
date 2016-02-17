@@ -34,7 +34,3 @@ RUN sudo -s git clone git://git.openwrt.org/15.05/openwrt.git
 # download and install all available "feeds"
 RUN sudo -s ./openwrt/scripts/feeds update -a \
     && ./openwrt/scripts/feeds install -a
-
-# make openwrt
-RUN sudo -s cd ./openwrt/ \
-    && make

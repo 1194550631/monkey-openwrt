@@ -36,5 +36,5 @@ RUN sudo -s ./openwrt/scripts/feeds update -a \
     && ./openwrt/scripts/feeds install -a
 
 # make openwrt
-RUN sudo -s cd ./openwrt/
+RUN sudo -s cd ./openwrt/ \
     && make
